@@ -1,0 +1,83 @@
+/* == HERO CONTAINER == */
+
+/* Imposta l'immagine di sfondo per il contenitore hero */
+.hero-container {
+    background-image: url(../img/CatalogoDesktopBackground.webp);
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    position: relative;
+}
+
+/* Pulsante "Ritorna alla home" */
+.btnGoHome {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+}
+
+/* Effetto hover per il pulsante "Ritorna alla home" */
+.btnGoHome:hover {
+    opacity: 0.5;
+}
+
+/* Contenitore del testo posizionato sopra l'immagine hero */
+.text-container {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Impostazione del font per i pulsanti generali */
+.btn {
+    font-size: 1.2rem;
+}
+
+/* == TITOLI == */
+
+/* Stile del titolo principale nella hero section */
+.titolo {
+    position: relative;
+    font-size: 100px;
+    line-height: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    color: purple;
+}
+
+/* Aggiunge un'animazione al titolo con effetto di scrittura */
+.titolo:before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 100%;
+    color: blueviolet;
+    -webkit-text-stroke: 1px blueviolet;
+    border-right: 2px solid blueviolet;
+    overflow: hidden;
+    animation: move 5s alternate ease-in-out infinite;
+}
+
+/* Animazione per il titolo, che espande la larghezza del testo */
+@keyframes move {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 50%;
+    }
+}
+
+/* == MEDIA QUERY == */
+
+/* Ridimensiona il titolo per schermi con larghezza inferiore a 700px */
+@media screen and (max-width: 700px) {
+    .titolo {
+        font-size: 24px;
+    }
+}

@@ -1,0 +1,16 @@
+{
+	"name": "Default Universal",
+	"image": "mcr.microsoft.com/devcontainers/universal:2",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"yzhang.markdown-all-in-one",
+				"yzane.markdown-pdf",
+				"vivaxy.vscode-conventional-commits",
+				"EditorConfig.EditorConfig",
+				"mhutchie.git-graph",
+				"yandeu.five-server"
+			]
+		}
+	}
+}

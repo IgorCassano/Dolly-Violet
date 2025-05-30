@@ -1,0 +1,314 @@
+/* == BACKGROUND == */
+
+/* Gradiente di sfondo per il contenuto principale */
+main {
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(88, 9, 91, 1) 20%);
+}
+
+/* Contenitore principale con sfondo nero e bordo viola */
+#content {
+    background: black;
+    border-radius: 12px;
+    border: 1px solid purple;
+}
+
+/* == WIDGET PROFILO == */
+
+/* Contenitore del widget profilo */
+.profile-widget {
+    position: relative;
+}
+
+/* Contenitore dell'immagine con sfondo adattato */
+.profile-widget .image-container {
+    background-size: cover;
+    background-position: center;
+    padding: 190px 0 10px;
+}
+
+/* Stile per l'avatar del profilo */
+.profile-widget .image-container .avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    margin: 0 auto -60px;
+    display: block;
+}
+
+/* Dettagli del profilo centrati */
+.profile-widget .details {
+    padding: 50px 15px 15px;
+    text-align: center;
+}
+
+/* == PANNELLO == */
+
+/* Dettaglio immagine selezionata */
+.selected-img{
+    opacity: 0.5;
+}
+
+.selectable-img:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.selectable-img{
+    height: 250px;
+}
+/* Stile di base per il pannello */
+.panel {
+    border-radius: 0;
+    margin-bottom: 30px;
+}
+
+/* Stile per l'intestazione del pannello */
+.panel .panel-heading {
+    border-radius: 0;
+    position: relative;
+}
+
+/* Posizionamento dei controlli nel pannello */
+.panel .panel-heading>.controls {
+    position: absolute;
+    right: 10px;
+    top: 12px;
+}
+
+/* Stile per i link cliccabili nell'intestazione */
+.panel .panel-heading .clickable {
+    margin-top: 0px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+/* Allineamento degli elementi nella parte sinistra e destra del pannello */
+.panel .panel-heading .left {
+    float: left;
+}
+
+.panel .panel-heading .right {
+    float: right;
+}
+
+/* Stile per il titolo del pannello */
+.panel .panel-title {
+    font-size: 23px;
+    line-height: 20px;
+}
+
+/* Titolo del pannello in formato ridotto */
+.panel .panel-title.panel-title-sm {
+    font-size: 18px;
+    line-height: 28px;
+}
+
+/* Titolo del pannello in formato ingrandito */
+.panel .panel-title.panel-title-lg {
+    font-size: 24px;
+    line-height: 34px;
+}
+
+/* Corpo del pannello con testo di dimensione più piccola */
+.panel .panel-body {
+    font-size: 13px;
+}
+
+/* Sezione del corpo del pannello */
+.panel .panel-body>.body-section {
+    margin: 0px 0px 20px;
+}
+
+/* Intestazione della sezione con font in grassetto */
+.section-heading {
+    margin: 0px 0px 5px;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+/* Contenuto della sezione */
+.section-content {
+    margin: 0px 0px 10px;
+    font-size: 20px;
+}
+
+/* Pannello bianco con bordo nero */
+.panel-white {
+    border: 1px solid black;
+}
+
+.panel-white>.panel-heading {
+    color: #333;
+    background-color: #fff;
+    border-color: black;
+}
+
+/* Bordo superiore viola per specifici elementi */
+.border-top-purple {
+    border-top: 5px solid purple;
+}
+
+/* == BOTTONE UTENTE == */
+
+/* Pulsante utente con sfondo nero e testo bianco */
+.btn-user {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+}
+
+/* checkbox dei termini di accesso */
+.terms-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin: 20px 0px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: black;
+}
+
+.terms-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+}
+
+.terms-checkbox {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    accent-color: purple; /* Cambia colore del checkbox se supportato */
+    transition: all 0.3s ease;
+}
+
+.terms-checkbox:checked {
+    background-color: purple;
+    border-color: purple;
+}
+
+.termsLink{
+    color: white;
+    text-decoration: none;
+}
+
+.termsLink:hover{
+    color: white;
+    text-decoration: none;
+}
+
+/* Stile per il campo di input paese */
+#country-input {
+    padding: 3px;
+}
+
+/* Effetto hover per il pulsante utente */
+.btn-user:hover {
+    opacity: 0.5;
+}
+
+/* == STILE STORIA ACQUISTI == */
+
+/* Layout per la sezione cronologia acquisti */
+#purchase-history-div {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Stile del testo nella sezione cronologia acquisti */
+#purchaseHistoryText {
+    font-size: 23px;
+}
+
+/* == WRAPPER SCORREVOLE == */
+
+/* Wrapper che consente lo scorrimento orizzontale */
+.wrapper {
+    display: flex;
+    overflow-x: auto;
+}
+
+/* Personalizzazione della scrollbar */
+.wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+/* Personalizzazione del pollice della scrollbar */
+.wrapper::-webkit-scrollbar-thumb {
+    background-color: #444;
+    border-radius: 4px;
+    border: 2px solid #000;
+}
+
+/* Effetto hover sul pollice della scrollbar */
+.wrapper::-webkit-scrollbar-thumb:hover {
+    background-color: #666;
+}
+
+/* Personalizzazione della traccia della scrollbar */
+.wrapper::-webkit-scrollbar-track {
+    background-color: #222;
+    border-radius: 4px;
+}
+
+/* Stile per gli elementi nel wrapper */
+.wrapper.item {
+    width: 200px;
+    line-height: 110px;
+    text-align: center;
+    background-color: #ddd;
+    margin-right: 2px;
+}
+
+/* Immagine prodotto con altezza fissa */
+.productImage {
+    height: 400px;
+}
+
+/* Messaggio per la cronologia acquisti vuota */
+.emptyPurchaseHistory {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* == MEDIA QUERY == */
+
+/* Ridimensionamento dell'intestazione della sezione per schermi piccoli */
+@media screen and (max-width: 700px) {
+    .section-heading {
+        margin: 0px 0px 5px;
+        font-weight: bold;
+        font-size: 20px;
+    }
+}
+
+/* == IMMAGINE DI SFONDO == */
+
+/* Immagine di sfondo personalizzata */
+.bg2 {
+    background-image: url(..//img/user.jpg);
+}
+
+/* == BOTTONE LINK == */
+
+/* Pulsante link con sfondo nero e testo bianco */
+.btnLink {
+    color: white;
+    background-color: black;
+    border: 1px solid white;
+    font-size: 15px;
+}
+
+/* Effetto hover per il pulsante link */
+.btnLink:hover {
+    opacity: 0.5;
+    letter-spacing: 1px;
+}

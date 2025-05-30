@@ -1,0 +1,101 @@
+/* == PRODOTTO CSS == */
+
+/* Stile per il bottone della taglia */
+.sizeButton {
+    border: 1px solid white;
+    color: white;
+    background-color: black;
+    padding: 10px;
+    margin-right: 10px;
+    margin-top: 15px;
+    font-size: 20px;
+}
+
+/* Effetto hover per il bottone della taglia */
+.sizeButton:hover {
+    cursor: pointer;
+}
+
+/* Bottone selezionato */
+.selected {
+    border: 5px solid white;
+}
+
+/* Stato disabilitato per il bottone della taglia */
+.sizeButton:disabled {
+    opacity: 0.5;
+    cursor: none;
+    background-color: gray;
+}
+
+/* Bottone Aggiungi al carrello */
+.btnAggiungiAlCarrello {
+    width: 100%;
+    padding: 10px;
+    font-weight: 500;
+    border: 1px solid black;
+}
+
+/* Effetto hover per il bottone Aggiungi al carrello */
+.btnAggiungiAlCarrello:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+/* Layout dei contenuti */
+.content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* Layout delle miniature */
+.thumbnails {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Stile per la sezione d'acquisto desktop */
+#buySectionDesktop {
+    color: white;
+}
+
+/* Immagine principale */
+#mainImg {
+    height: 700px;
+    border-radius: 12px;
+}
+
+/* Stile per il prezzo */
+.price {
+    font-size: 20px;
+}
+
+/* Miniatura immagine */
+.thumnailsImg {
+    height: 120px;
+    margin: 10px;
+    border: 2px solid white;
+}
+
+/* Effetto hover per le miniature */
+.thumnailsImg:hover {
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+/* Bottone per vedere i dettagli */
+.showDetails {
+    width: 100%;
+    font-size: 20px;
+    padding: 7px;
+    border: 1px solid white;
+    background-color: black;
+    color: white;
+}
+
+/* Effetto hover per il bottone dei dettagli */
+.showDetails:hover {
+    opacity: 0.8;
+}

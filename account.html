@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+
+    <!-- Descrizione della pagina per i motori di ricerca e social media -->
+    <meta name="description"
+        content="Dolly Violet - La tua boutique online per abbigliamento e accessori moda. Scopri le novità!">
+
+    <!-- Parole chiave per migliorare l'indicizzazione SEO del sito -->
+    <meta name="keywords" content="fashion, dolly violet, moda, boutique online, streethwear">
+
+    <!-- Meta tag Open Graph per ottimizzare la visualizzazione sui social media -->
+    <meta property="og:title" content="DOLLY VIOLET - HOME">
+    <meta property="og:description" content="Scopri la moda con Dolly Violet. Gestisci il tuo account.">
+    <meta property="og:image" content="img/icona.webp"> <!-- Immagine da mostrare quando condividi il link -->
+    <meta property="og:url" content="http://127.0.0.1:5500/index.html">
+    <meta property="og:type" content="website">
+
+    <!-- Impostazione della lingua della pagina per i motori di ricerca -->
+    <meta name="language" content="it">
+    <title>DOLLY VIOLET - ACCOUNT</title>
+    <link href="img/icona.webp" rel="icon" type="image/x-icon">
+
+    <!-- Link al foglio di stile di Bootstrap per la gestione della griglia e degli stili base -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Inclusione di jQuery (versione slim, utile per Bootstrap 4) -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+
+    <!-- Inclusione di Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+
+    <!-- Inclusione del JavaScript di Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <!-- Inclusione dei remixicon per le icone -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
+
+    <!-- Inclusione della libreria ScrollReveal per animazioni al caricamento della pagina -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- Collegamento ai fogli di stile personali -->
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/account.css" rel="stylesheet" type="text/css" />
+
+    <!-- Collegamento agli script personali -->
+    <script src="js/script.js"></script>
+    <script src="js/account.js"></script>
+</head>
+
+<body>
+    <!-- Sezione di caricamento della pagina (loader) -->
+    <div class="loader">
+        <img id="imgLoader" src="img/loader.gif" alt="loader Gif">
+    </div>
+
+    <!-- Header della pagina -->
+    <header>
+        <!-- Navbar in alto -->
+        <div class="container box">
+            <div class="navbar-top">
+                <div class="icons intervalAnimation">
+                    <!-- Icone di ricerca, cuore e carrello -->
+                    <i class="ri-search-line" onclick="showSearchBar()"></i>
+                    <i class="ri-shopping-cart-2-line" onclick="redirectTo('carrello.html')"></i>
+                </div>
+                <div class="search intervalAnimation" id="search">
+                    <form onsubmit="search()" id="search__form" class="search__form">
+                        <i class="ri-search-line search__icon"></i>
+                        <input type="search" placeholder="Cosa stai cercando ?" class="search__input"
+                            id="search__input">
+                    </form>
+
+                    <i class="ri-close-line search__close" id="search-close" onclick="hideSearchBar()"></i>
+                </div>
+                <!-- Logo dell'intestazione -->
+                <div class="logo intervalAnimation">
+                    <img src="img/logo.png" alt="Dolly Violet logo">
+                </div>
+                <!-- Sezione di login e registrazione, nascosta se l'utente è già loggato -->
+                <div id="Logged" class="d-none icons">
+                    <img id="navbarAvatar" class="navbarAvatar" onclick="redirectTo('account.html')" alt="avatar">
+                    <button class="btnLogOut" onclick="LogOut()">Esci</button>
+                </div>
+                <!-- Link di login e registrazione -->
+                <div id="login-register" class="intervalAnimation">
+                    <a href="register-login.html?q=Login" id="Login">Login</a>
+                    <a href="register-login.html?q=Register" id="Register">Register</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navbar principale (menu di navigazione) -->
+        <div class="main-content intervalAnimation">
+            <nav class="navbar navbar-expand-md" id="navbar-color">
+                <div class="container">
+                    <!-- Bottone di toggle per la navbar su schermi piccoli -->
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#collapsibleNavbar">
+                        <span><i><img src="img/menu.png" alt="menu img" width="30px"></i></span>
+                    </button>
+
+                    <!-- Collegamenti della navbar (menu principale) -->
+                    <div class="collapse navbar-collapse pe-5" id="collapsibleNavbar">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="catalogo.html?type=best-seller">Best Seller</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="catalogo.html?type=offerte">Offerte</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="catalogo.html">Catalogo</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="pt-5 pb-5">
+        <div class="container  p-3 p-lg-4" id="content">
+            <h1 class="mt-5 mb-5 text-center">Ecco un recapito delle tue informazioni</h1>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-white profile-widget">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="image-container bg2">
+                                    <img class="avatar" alt="avatar" id="avatarImage">
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="details">
+                                    <h4 id="username-account"><i class="fa fa-sheild"></i></h4>
+                                    <p id="username" class="section-heading mt-4"></p>
+                                    <div id="ImmaginiDisponibili" class="mt-3 mb-3 d-none">
+                                        <h3>Immagini Disponibili</h3>
+                                        <div class="row mt-5">
+                                            <img src="https://i.ibb.co/QjFt064/pfp7.jpg" alt="avatar"
+                                                class="mb-3 mb-lg-0 col-3 selectable-img img-fluid">
+                                            <img src="https://i.ibb.co/kxgBMG1/pfp6.jpg" alt="avatar"
+                                                class="mb-3 mb-lg-0 col-3 selectable-img img-fluid">
+                                            <img src="https://i.ibb.co/LYdYTJT/pfp5.jpg" alt="avatar"
+                                                class="mb-3 mb-lg-0 col-3 selectable-img img-fluid">
+                                            <img src="https://i.ibb.co/ZgN5xw3/pfp4.jpg" alt="avatar"
+                                                class="mb-3 mb-lg-0 col-3 selectable-img img-fluid">
+                                        </div>
+                                        <div class="row mt-5">
+                                            <img src="https://i.ibb.co/3Yk917m/pfp2.jpg" alt="avatar"
+                                                class="mb-3 mb-lg-0 col-3 selectable-img img-fluid">
+                                            <img src="https://i.ibb.co/tH6xmRB/pfp1.jpg" alt="avatar"
+                                                class="mb-3 mb-lg-0 col-3 selectable-img img-fluid">
+                                            <img src="https://i.ibb.co/gm8CL33/img8.jpg" alt="avatar"
+                                                class="mb-3 mb-lg-0 col-3 selectable-img img-fluid">
+                                            <img src="https://i.ibb.co/HKK2njD/pfp3.jpg" alt="avatar"
+                                                class="mb-3 mb-lg-0 col-3 selectable-img img-fluid">
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-user" id="btnChangeImg">Cambia
+                                        immagine</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form id="form-upload-user">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="panel panel-white border-top-purple">
+                                    <div class="panel-heading">
+                                        <h2 class="panel-title p-2">Informazioni</h2>
+                                        <div class="controls pull-right">
+                                            <span class="pull-right clickable">
+                                                <i class="fa fa-chevron-up"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="body-section">
+                                            <h5 class="section-heading">Nome</h5>
+                                            <p class="section-content" id="name-text"></p>
+                                            <input class="input-content d-none" id="name-input" type="text" required>
+                                        </div>
+                                        <div class="body-section">
+                                            <h5 class="section-heading">Cognome</h5>
+                                            <p class="section-content" id="surname-text"></p>
+                                            <input class="input-content d-none" id="surname-input" type="text" required>
+                                        </div>
+                                        <div class="body-section">
+                                            <h5 class="section-heading">Telefono</h5>
+                                            <p class="section-content" id="number-text"></p>
+                                            <input class="input-content d-none" id="number-input" type="text"
+                                                pattern="^\d{10}$" maxlength="10" minlength="10" required>
+
+                                        </div>
+                                        <div class="body-section">
+                                            <h5 class="section-heading">Email</h5>
+                                            <p class="section-content" id="email-text"></p>
+                                            <input class="input-content d-none" id="email-input" type="email" required>
+                                        </div>
+                                        <div class="body-section">
+                                            <h5 class="section-heading">Password</h5>
+                                            <p class="section-content" id="password-text"></p>
+                                            <input class="input-content d-none" id="password-input" type="text"
+                                                required>
+                                        </div>
+                                        <div class="body-section">
+                                            <button class="btn btn-user" id="show-password-btn">Mostra password</button>
+                                            <br>
+                                            <button class="btn btn-user mt-3" id="modify-btn">Modifica Account</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="d-flex flex-column">
+                                    <div class="panel panel-white border-top-purple">
+                                        <div class="panel-heading">
+                                            <h2 class="panel-title p-2">Località</h2>
+                                            <div class="controls pull-right">
+                                                <span class="pull-right clickable">
+                                                    <i class="fa fa-chevron-up"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="panel-body">
+                                            <div class="body-section">
+                                                <h5 class="section-heading">Stato</h5>
+                                                <p class="section-content" id="country-text"></p>
+                                                <select class="input-content d-none" id="country-input" name="country"
+                                                    required>
+                                                    <option value="" hidden disabled selected>Country</option>
+                                                    <option value="America">America</option>
+                                                    <option value="Japan">Japan</option>
+                                                    <option value="India">India</option>
+                                                    <option value="Nepal">Nepal</option>
+                                                    <option value="Italia">Italia</option>
+                                                    <option value="Australia">Australia</option>
+                                                    <option value="Germany">Germany</option>
+                                                    <option value="France">France</option>
+                                                    <option value="United Kingdom">United Kingdom</option>
+                                                    <option value="Canada">Canada</option>
+                                                    <option value="Brazil">Brazil</option>
+                                                    <option value="Mexico">Mexico</option>
+                                                    <option value="China">China</option>
+                                                    <option value="South Korea">South Korea</option>
+                                                    <option value="Russia">Russia</option>
+                                                    <option value="Spain">Spain</option>
+                                                    <option value="Argentina">Argentina</option>
+                                                    <option value="South Africa">South Africa</option>
+                                                    <option value="Egypt">Egypt</option>
+                                                    <option value="Saudi Arabia">Saudi Arabia</option>
+                                                    <option value="Turkey">Turkey</option>
+                                                    <option value="Portugal">Portugal</option>
+                                                    <option value="Netherlands">Netherlands</option>
+                                                    <option value="Sweden">Sweden</option>
+                                                    <option value="Belgium">Belgium</option>
+                                                    <option value="Switzerland">Switzerland</option>
+                                                </select>
+                                            </div>
+                                            <div class="body-section">
+                                                <h5 class="section-heading">Città</h5>
+                                                <p class="section-content" id="city-text">citta</p>
+                                                <input class="input-content d-none" id="city-input" type="text"
+                                                    required>
+                                            </div>
+                                            <div class="body-section">
+                                                <h5 class="section-heading">Via</h5>
+                                                <p class="section-content" id="address-text">via</p>
+                                                <input class="input-content d-none" id="address-input" type="text"
+                                                    required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-white border-top-purple">
+                                        <div class="panel-heading">
+                                            <h2 class="panel-title p-2">Dati della carta</h2>
+                                            <div class="controls pull-right">
+                                                <span class="pull-right clickable">
+                                                    <i class="fa fa-chevron-up"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <div class="body-section">
+                                                        <h5 class="section-heading">Nome</h5>
+                                                        <p class="section-content" id="cardName-text">prova</p>
+                                                        <input class="input-content d-none" id="cardName-input"
+                                                            type="text" required>
+                                                    </div>
+                                                    <div class="body-section">
+                                                        <h5 class="section-heading">Numero di carta</h5>
+                                                        <p class="section-content" id="cardNumber-text">prova</p>
+                                                        <input class="input-content d-none" id="cardNumber-input"
+                                                            type="text" pattern="^\d{16}$" maxlength="16" minlength="16"
+                                                            required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="body-section">
+                                                        <h5 class="section-heading">Data di scadenza</h5>
+                                                        <p class="section-content" id="cardDate-text">prova</p>
+                                                        <input class="input-content d-none" id="cardDate-input"
+                                                            type="month" required>
+                                                    </div>
+                                                    <div class="body-section">
+                                                        <h5 class="section-heading">CVV</h5>
+                                                        <p class="section-content" id="cvv-text">prova</p>
+                                                        <input class="input-content d-none" id="cvv-input" type="text"
+                                                            pattern="^\d{3}$" maxlength="3" minlength="3" required>
+                                                    </div>
+                                                </div>                                          
+                                            </div>
+                                            <div class="terms-container input-content d-none">
+                                                <label for="accept-terms" class="terms-label">
+                                                    <input type="checkbox" id="accept-terms" class="terms-checkbox" required>
+                                                    <a class="termsLink" href="pdf/Dolly_Violet_Access_Terms.pdf" target="_blank">Accetta i nostri termini di accesso</a>
+                                                </label>
+                                            </div>      
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="row mt-4">
+                        <div class="col-12">
+                            <div class="panel panel-white border-top-purple">
+                                <div class="panel-heading">
+                                    <h2 class="panel-title p-2">Cronologia d'acquisto</h2>
+                                    <div class="controls">
+                                        <span class="pull-right clickable">
+                                            <i class="fa fa-chevron-up"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="panel-body mt-3 w-100">
+                                    <div id="HistoryProductsWrapper" class="wrapper w-100">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer della pagina, inizialmente nascosto -->
+    <footer class="mr-3 ml-3 text-center text-lg-start">
+        <!-- Section: Links  -->
+        <section class="">
+            <div class="text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-lg-4 col-12 mx-auto mb-4">
+                        <!-- Content -->
+                        <h6 class="text-uppercase fw-bold ">Dolly Violet</h6>
+                        <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                            style="width: 60px; background-color: #7c4dff; height: 2px" />
+                        <p class="">Siamo i perfetti concorrenti di Dolly Noire,<br> sfruttiamo bambini per la creazione
+                            dei
+                            nostri prodotti</p>
+                        <p class="">ma questo non vuol dire che i nostri abbigliamenti<br> avranno un prezzo minore
+                            rispetto a Dolly
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-lg-4 col-12 col-xl-2 mx-auto mb-4">
+                        <img class="img-fluid mt-sm-2 mb-sm-3" id="footer-logo" alt="DollyViolet Logo"
+                            src="https://see.fontimg.com/api/rf5/z8xjG/MzU3OTg0Yzk4N2MzNGNjYzk0NDgxYjdiYTliYTBmZTcudHRm/RG9sbHkgVmlvbGV0/darlington-demo.png?r=fs&h=141&w=1000&fg=FFFFFF&bg=212020&tb=1&s=141">
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-lg-4 col-12 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold ">Contatti</h6>
+                        <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                            style="width: 60px; background-color: #7c4dff; height: 2px" />
+                        <p class="">New York, NY 10012, US</p>
+                        <p class="">questamailnonesiste@dolly.com</p>
+                        <p class="">+ 01 234 567 88</p>
+                        <p class="">+ 01 234 567 89</p>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+            </div>
+        </section>
+        <!-- Section: Links  -->
+
+        <!-- Copyright -->
+        <div class="text-center p-3 ">
+            © 2020 Copyright:
+            <a class="" href="pdf/Politiche_Legali_Sito_Web.pdf">DollyViolet.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+    <!-- Modal di risposta server -->
+    <div id="Modal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-title"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="closeX">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p id="modal-body"></p>
+                </div>
+                <div class="modal-footer" id="divButtons">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

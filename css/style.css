@@ -1,0 +1,487 @@
+/*== GLOBAL CSS ==*/
+
+body {
+    background-color: black;
+    /* Imposta il colore di sfondo della pagina su nero */
+    color: white;
+}
+
+/*== LOADER ==*/
+
+/* Stile per il loader (animazione di caricamento) */
+.loader {
+    position: fixed;
+    /* Posizione fissa rispetto alla finestra */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    /* Imposta un indice di z per sovrapporsi ad altri elementi */
+    width: 100vw;
+    height: 100vh;
+    /* L'area del loader occupa tutta la finestra */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Allinea il contenuto al centro della pagina */
+    background-color: black;
+    transition: opacity 0.75s, visibility 0.75s;
+    /* Aggiungi transizione per l'opacità e la visibilità */
+}
+
+/* Imposta la dimensione dell'immagine del loader */
+#imgLoader {
+    height: 200px;
+}
+
+/* Nasconde il loader quando la classe .loader-hidden è aggiunta */
+.loader-hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/*== HEADER ==*/
+
+/* Stile per la barra di navigazione principale */
+.navbar-top {
+    margin-left: 35px;
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Stile per le icone all'interno della barra di navigazione */
+.icons i {
+    color: white;
+    width: auto;
+    margin-left: 10px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.icons i:hover {
+    opacity: 0.5;
+}
+
+/* Stile per lavatar nella navbar*/
+.navbarAvatar{
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+
+.navbarAvatar:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+/* Stile per la barra di navigazione ridotta (per il logo e link) */
+.navbar-collapse {
+    margin-right: 2%;
+}
+
+/* Colore per il bottone di login */
+#Login {
+    color: white;
+}
+
+/* Stile per il bottone di logout */
+.btnLogOut {
+    background-color: black;
+    border: 2px solid white;
+    color: white;
+    border-radius: 5px;
+    padding: 2px 10px 2px 10px;
+    font-size: 20px;
+}
+
+.btnLogOut:hover {
+    opacity: 0.5;
+    /* Aggiunge effetto di opacità al passaggio del mouse */
+    cursor: pointer;
+}
+
+/* Stile per il link di registrazione */
+#Register {
+    background: purple;
+    padding: 10px;
+    border-radius: 12px;
+    color: black;
+    text-decoration: none;
+}
+
+#Login:hover {
+    cursor: pointer;
+}
+
+/* Hover effect per il link di registrazione */
+#Register:hover {
+    cursor: pointer;
+    color: white;
+}
+
+/* Barra di navigazione con sfondo gradiente */
+#navbar-color {
+    background: radial-gradient(circle, rgba(88, 9, 91, 1) 59%, rgba(2, 0, 36, 1) 85%);
+    border-bottom: 2px solid black;
+}
+
+/* Stile per la navigazione (links) */
+.navbar-nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Stile per il link della navigazione */
+.nav-link {
+    margin-left: 30px;
+    color: white;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+
+/* Hover effect per i link della navigazione */
+.nav-link:hover {
+    font-weight: bold;
+    color: white;
+    letter-spacing: 2px;
+}
+
+/* Stile per l'immagine dell'utente nella navbar */
+#navbarUser {
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+    object-fit: cover;
+    /* Mantiene l'immagine proporzionata */
+}
+
+/* Contenitore per l'utente loggato */
+#logged {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* Stile per gli input e i bottoni */
+.search__input {
+    border: none;
+    outline: none;
+}
+
+/*== SEARCH (Ricerca) ==*/
+
+/* Stile per il pop-up di ricerca */
+.search {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background-color: hsla(230, 75%, 15%, .1);
+    backdrop-filter: blur(24px);
+    padding: 8rem 1.5rem 0;
+    opacity: 0;
+    pointer-events: none;
+    /* Impedisce l'interazione con il pop-up quando non visibile */
+    transition: opacity .4s;
+}
+
+
+/* Stile per il pulsante di chiusura della ricerca */
+.search__close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* Stile per il modulo di ricerca */
+.search__form {
+    display: flex;
+    align-items: center;
+    column-gap: .5rem;
+    background-color: hsl(230, 100%, 97%);
+    box-shadow: 0 8px 32px hsla(230, 75%, 15%, .2);
+    padding-inline: 1rem;
+    border-radius: .5rem;
+    transform: translateY(-1rem);
+    transition: transform .4s;
+}
+
+/* Icona della ricerca */
+.search__icon {
+    font-size: 1.25rem;
+    color: hsl(230, 75%, 15%);
+}
+
+/* Input della ricerca */
+.search__input {
+    width: 100%;
+    padding-block: 1rem;
+    background-color: hsl(230, 100%, 97%);
+    color: hsl(230, 12%, 40%);
+}
+
+.search__input::placeholder {
+    color: hsl(230, 12%, 40%);
+}
+
+/* Mostra il modulo di ricerca */
+.show-search {
+    opacity: 1;
+    pointer-events: initial;
+}
+
+/* Aggiusta la posizione del modulo di ricerca quando è visibile */
+.show-search .search__form {
+    transform: translateY(0);
+}
+
+.modal-content {
+    background-color: black;
+    color: white;
+}
+
+.closeX {
+    color: white;
+}
+
+/*== MEDIA QUERIES ==*/
+
+/* Aggiusta la visualizzazione per schermi più piccoli (max-width: 700px) */
+
+@media screen and (max-width: 700px) {
+    .navbar-top{
+        margin: 0px;
+    }
+    .logo img {
+        height: 39px;
+    }
+
+    .icons i {
+        font-size: 20px;
+        width: auto;
+    }
+
+    .btnLogOut {
+        font-size: 15px;
+    }
+
+    #Login {
+        font-size: 15px;
+    }
+
+    #Register {
+        font-size: 15px;
+        padding-right: 5px;
+        padding-left: 5px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    #navbar-color {
+        background: linear-gradient(90deg, rgba(88, 9, 91, 1) 59%, rgba(2, 0, 36, 1) 85%);
+    }
+
+    .navbar-nav {
+        justify-content: left;
+        align-items: start;
+    }
+
+    .navbarAvatar{
+        height: 30px;
+        width: 30px;
+        margin-right: 7px;
+    }
+    
+}
+
+/* Stile per la ricerca sui dispositivi con schermi tra 576px e 1024px */
+@media screen and (min-width: 576px){
+    .search {
+        padding-top: 10rem;
+    }
+
+    .search__form {
+        max-width: 450px;
+        margin-inline: auto;
+    }
+
+    .search__close {
+        width: max-content;
+        top: 5rem;
+        left: 0;
+        right: 0;
+        margin-inline: auto;
+        font-size: 2rem;
+    }
+
+}
+
+/* Stili per i bottoni di selezione delle taglie */
+.sizeButton {
+    border: 1px solid white;
+    color: white;
+    background-color: black;
+    padding: 10px;
+    margin-right: 10px;
+    margin-top: 15px;
+    font-size: 15px;
+}
+
+.sizeButton:hover {
+    cursor: pointer;
+}
+
+.sizeButton:disabled {
+    opacity: 0.5;
+    background-color: gray;
+}
+
+/*== CARDS ==*/
+
+/* Stile per le card del prodotto */
+.prodotto {
+    cursor: pointer;
+}
+
+/* Stile generale per le card */
+.card {
+    position: relative;
+    background-color: black;
+    width: 100%;
+    height: auto;
+    transition: 0.3s;
+    overflow: hidden;
+}
+
+/* Stile per l'immagine nelle card */
+.card-img-top {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: relative;
+}
+
+/* Stile per l'overlay al passaggio del mouse sopra la card */
+.hover-overlay {
+    padding: 5px;
+    position: absolute;
+    height: 250px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.card:hover .hover-overlay {
+    transform: translateY(0);
+    /* Mostra l'overlay quando la card è in hover */
+}
+
+/* Corpo della card */
+.card-body {
+    color: white;
+    padding: 10px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* Titolo del prodotto nelle card */
+.card-title {
+    margin-bottom: 5px;
+    text-align: left;
+    font-size: 1.1em;
+}
+
+/* Descrizione del prodotto nelle card */
+.card-text {
+    margin-bottom: 0;
+    text-align: left;
+    font-size: 1.2em;
+}
+
+#productTitle{
+    font-size: 20px;
+}
+
+
+/*== FOOTER ==*/
+
+footer {
+    border-top: 3px solid purple;
+}
+
+/* Stile per il prodotto e dimensioni nei dispositivi con schermo piccolo */
+@media screen and (max-width: 700px) {
+    .titolo {
+        font-size: 35px;
+    }
+
+    #footer-logo {
+        height: 90px;
+    }
+
+    .sizeButton {
+        font-size: 8px;
+        padding: 4px;
+    }
+
+    #productTitle {
+        font-size: 20px;
+    }
+
+    .hover-overlay {
+        height: 250px;
+    }
+
+    #productTitle {
+        font-size: 15px;
+    }
+
+    .sizeTitle {
+        padding-top: 10px;
+        font-size: 15px;
+    }
+
+    .price{
+        padding-top: 10px;
+        font-size: 15px;
+    }
+}
+
+/* Aggiustamenti per tablet (700px - 1024px) */
+@media screen and (min-width: 700px) and (max-width: 1024px) {
+    .hover-overlay {
+        height: 350px;
+    }
+}
+
+/* Aggiustamenti per schermi più grandi (1024px - 1500px) */
+@media screen and (min-width: 1024px) and (max-width: 1500px) {
+    .hover-overlay {
+        height: 300px;
+    }
+
+    .sizeTitle {
+        font-size: 20px;
+    }
+
+    .sizeButton {
+        font-size: 15px;
+        padding: 4px;
+    }
+}

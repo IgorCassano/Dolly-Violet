@@ -1,0 +1,396 @@
+/* == REGISTER - LOGIN CSS == */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins");
+
+/* Stile per la sezione principale */
+main {
+    display: flex; 
+    color: black; 
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(88, 9, 91, 1) 20%); /* Gradiente di sfondo */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    font-family: "Poppins", sans-serif; 
+    overflow: hidden; 
+    height: 100vh;
+}
+
+/* Stile per il titolo */
+#Title {
+    font-weight: 700; 
+    letter-spacing: -1.5px; 
+    margin: 0;
+    margin-bottom: 15px;
+}
+
+/* Stile per il titolo con la classe 'title' */
+#Title.title {
+    font-size: 45px; 
+    line-height: 45px; 
+    margin: 0; 
+    text-shadow: 0 0 10px rgba(16, 64, 74, 0.5); 
+}
+
+/* Stile per il testo di informazioni */
+.info {
+    font-size: 14px; 
+    font-weight: 100; 
+    line-height: 20px; 
+    letter-spacing: 0.5px; 
+    margin: 20px 0 30px; 
+    text-shadow: 0 0 10px rgba(16, 64, 74, 0.5); 
+}
+
+/* Stile per i tag 'span' */
+span {
+    font-size: 14px; 
+    margin-top: 25px; 
+}
+
+/* Stile per i pulsanti */
+.button {
+    position: relative; 
+    border-radius: 20px;
+    border: 1px solid purple; 
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(88,9,91,1) 20%); 
+    color: white; 
+    font-size: 15px; 
+    font-weight: 700; 
+    margin: 10px; 
+    padding: 12px 80px; 
+    letter-spacing: 1px;
+    text-transform: capitalize; 
+    transition: 0.3s ease-in-out; 
+}
+
+/* Effetto hover per il pulsante */
+.button:hover {
+    letter-spacing: 3px; 
+    cursor: pointer;
+}
+
+/* Effetto attivo per il pulsante */
+.button:active {
+    transform: scale(0.95); 
+}
+
+/* Rimuove il contorno quando il pulsante è in focus */
+.button:focus {
+    outline: none;
+}
+
+/* Stile per il pulsante con classe 'ghost' */
+.button .ghost {
+    background-color: rgba(225, 225, 225, 0.2);
+    border: 2px solid #fff; 
+    color: #fff; 
+}
+
+/* Animazioni per le icone all'interno del pulsante 'ghost' */
+.button .ghost i {
+    position: absolute; 
+    opacity: 0; 
+    transition: 0.3s ease-in-out; 
+}
+
+/* Posizione delle icone di 'register' e 'login' */
+.button .ghost i.register {
+    right: 70px; 
+}
+
+.button .ghost i.login {
+    left: 70px;
+}
+
+/* Effetto hover per mostrare le icone */
+.button .ghost:hover i.register {
+    right: 40px;
+    opacity: 1;
+}
+
+.button .ghost:hover i.login {
+    left: 40px;
+    opacity: 1;
+}
+
+/* Stile per il contenitore del form */
+.form {
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px 50px;
+    height: 100%;
+    text-align: center;
+}
+
+/* Stile per la select box */
+.select-box select {
+    background-color: #eee;
+    border-radius: 10px;
+    border: none;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 100%;
+}
+
+/* Stile per gli input */
+input {
+    background-color: #eee;
+    border-radius: 10px;
+    border: none;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 100%;
+}
+
+/* Contenitore principale per login e registrazione */
+.login-register-container {
+    background-color: #fff;
+    border-radius: 25px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    position: relative;
+    overflow: hidden;
+    width: 768px;
+    max-width: 100%;
+    min-height: 600px;
+}
+
+/* Stile per i contenitori dei form di login e registrazione */
+.form-container {
+    position: absolute; 
+    top: 0;
+    height: 100%; 
+    transition: all 0.6s ease-in-out; 
+}
+
+/* Contenitore per il login */
+.login-container {
+    left: 0; 
+    width: 50%; 
+    z-index: 2; 
+}
+
+/* Animazione quando il pannello è attivo */
+.login-register-container.right-panel-active .login-container {
+    transform: translateX(100%); 
+}
+
+/* Contenitore per la registrazione */
+.register-container {
+    left: 0; 
+    width: 50%; 
+    opacity: 0;
+    z-index: 1; 
+}
+
+/* Animazione per mostrare il contenitore di registrazione */
+.login-register-container.right-panel-active .register-container {
+    transform: translateX(100%); 
+    opacity: 1; 
+    z-index: 5; 
+    animation: show 0.6s; 
+}
+
+/* Animazione per il contenitore di registrazione */
+@keyframes show {
+    0%,
+    49.99% {
+        opacity: 0;
+        z-index: 1;
+    }
+    50%,
+    100% {
+        opacity: 1;
+        z-index: 5; 
+    }
+}
+
+/* Contenitore sovrapposto che copre metà della sezione */
+.overlay-container {
+    position: absolute; 
+    top: 0; 
+    left: 50%; 
+    width: 50%; 
+    height: 100%; 
+    overflow: hidden; 
+    transition: transform 0.6s ease-in-out; 
+    z-index: 100;
+}
+
+/* Animazione quando il pannello è attivo */
+.login-register-container.right-panel-active .overlay-container {
+    transform: translate(-100%); /* Muove l'overlay fuori dalla vista */
+}
+
+/* Stile per l'overlay */
+.overlay {
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(88, 9, 91, 1) 20%);
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-position: 0 0; 
+    color: #fff;
+    position: relative; 
+    left: -100%; 
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+}
+
+/* Sovrapposizione con effetto sfumato */
+.overlay::before {
+    content: ""; 
+    position: absolute; 
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: linear-gradient(to top,
+            rgba(46, 94, 109, 0.4) 40%, 
+            rgba(46, 94, 109, 0)); 
+}
+
+/* Animazione per muovere l'overlay */
+.login-register-container.right-panel-active .overlay {
+    transform: translateX(50%); 
+}
+
+/* Pannello sovrapposto a sinistra */
+.overlay-panel {
+    position: absolute; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    flex-direction: column; 
+    padding: 0 40px; 
+    text-align: center; 
+    top: 0; 
+    height: 100%; 
+    width: 50%; 
+    transform: translateX(0); 
+    transition: transform 0.6s ease-in-out; 
+}
+
+/* Posizione iniziale del pannello di sinistra */
+.overlay-left {
+    transform: translateX(-20%); 
+}
+
+/* Animazione per il pannello di sinistra */
+.login-register-container.right-panel-active .overlay-left {
+    transform: translateX(0); 
+}
+
+/* Pannello sovrapposto a destra */
+.overlay-right {
+    right: 0; /* Posizione a destra */
+    transform: translateX(0); 
+}
+
+/* Animazione per il pannello di destra */
+.login-register-container.right-panel-active .overlay-right {
+    transform: translateX(20%); 
+}
+
+/* Stile per la sezione dei social */
+.social-container {
+    margin: 20px 0; 
+}
+
+/* Stile per i link dei social */
+.social-container a {
+    border: 1px solid #dddddd;
+    border-radius: 50%;
+    display: inline-flex; 
+    justify-content: center; 
+    align-items: center; 
+    margin: 0 5px;
+    height: 40px;
+    width: 40px;
+    transition: 0.3s ease-in-out;
+}
+
+/* Effetto hover per i link social */
+.social-container a:hover {
+    border: 1px solid #4bb6b7;
+}
+
+/* Media query per schermi più piccoli (max-width: 700px) */
+@media screen and (max-width: 700px) {
+    main {
+        height: 900px;
+    }
+    
+    .login-register-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+
+    .form-container {
+        position: relative;
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .login-container {
+        transform: translateX(0);
+        transition: transform 0.6s ease-in-out;
+    }
+
+    .register-container {
+        transform: translateX(100%);
+        transition: transform 0.6s ease-in-out;
+    }
+
+    .login-register-container.right-panel-active .login-container {
+        transform: translateX(-100%);
+    }
+
+    .login-register-container.right-panel-active .register-container {
+        transform: translateX(0);
+    }
+
+    .overlay-container {
+        background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(88, 9, 91, 1) 20%); /* Gradiente di sfondo */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        overflow: hidden;
+        transition: transform 0.6s ease-in-out;
+        z-index: 100; 
+    }
+
+    .login-register-container.right-panel-active .overlay-container {
+        transform: translateY(125%); 
+    }
+
+    .overlay {
+        color: #fff; 
+        position: relative; 
+        height: 100%; 
+        width: 200%;
+        left: -100%; 
+        transition: transform 0.6s ease-in-out;
+    }
+
+    .overlay::before {
+        content: ""; 
+        position: absolute; 
+        left: 0;
+        right: 0; 
+        top: 0;
+        bottom: 0;
+        background: linear-gradient(to top,
+                rgba(46, 94, 109, 0.4) 40%,
+                rgba(46, 94, 109, 0)); 
+    }
+}
